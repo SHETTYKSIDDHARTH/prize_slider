@@ -1,0 +1,109 @@
+.circular-slider {
+  background: radial-gradient(#0a0601, #000000);
+  height: 100vh;
+  color: #0bc126;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+}
+
+.text {
+  display: none;
+}
+
+.text.active {
+  display: block;
+}
+
+.text h1 {
+  font-size: 2.5em;
+  margin: 0.5em 0;
+}
+
+.text p {
+  max-width: 550px;
+  line-height: 1.5;
+  margin: 0 auto;
+}
+
+.slider {
+  position: absolute;
+  bottom: -40vw;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.slider .img {
+  width: 70vw;
+  height: 70vw;
+  max-width: 600px;
+  max-height: 600px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  transition: background-image 0.3s ease;
+}
+
+.indicator {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80vw;
+  height: 80vw;
+  max-width: 700px;
+  max-height: 700px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  transition: transform 300ms;
+}
+
+.indicator::before {
+  content: "";
+  position: absolute;
+  top: -0.5em;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1em;
+  height: 1em;
+  background-color: #fff;
+  border-radius: 50%;
+}
+
+.menu, .menu div {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 85vw;
+  height: 85vw;
+  max-width: 750px;
+  max-height: 750px;
+  border-radius: 50%;
+}
+
+.menu span {
+  position: absolute;
+  top: -1em;
+  left: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: color 200ms;
+  text-align: center;
+}
+
+.menu span:hover {
+  color: #ccc;
+}
+
+.menu div:nth-child(1) { transform: translate(-50%, -50%) rotate(-58deg); }
+.menu div:nth-child(2) { transform: translate(-50%, -50%) rotate(-32deg); }
+.menu div:nth-child(3) { transform: translate(-50%, -50%) rotate(0deg); }
+.menu div:nth-child(4) { transform: translate(-50%, -50%) rotate(32deg); }
+.menu div:nth-child(5) { transform: translate(-50%, -50%) rotate(58deg); }
+
+@media screen and (min-width: 800px) {
+  .slider {
+      bottom: -22em;
+  }
+}
